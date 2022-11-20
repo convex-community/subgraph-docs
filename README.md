@@ -4,7 +4,7 @@ description: Documentations for subgraphs related to Curve and its ecosystem
 
 # Overview
 
-Contributions to this document and the subgraphs are welcome. The repository for this gitbook can be found at: . The repository for each subgraph can be found in their respective overview page.
+Contributions to this document and the subgraphs are welcome. The repository for this gitbook can be found at: [https://github.com/convex-community/subgraph-docs](https://github.com/convex-community/subgraph-docs). The repository for each subgraph can be found in their respective overview page.
 
 If you are unfamiliar with The Graph and GraphQL queries, the following links can be consulted as preliminary readings:
 
