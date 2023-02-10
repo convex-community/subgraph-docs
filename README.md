@@ -11,7 +11,7 @@ If you are unfamiliar with The Graph and GraphQL queries, the following links ca
 * [https://thegraph.com/docs/en/querying/querying-the-graph/](https://thegraph.com/docs/en/querying/querying-the-graph/)
 * [https://thegraph.com/docs/en/querying/graphql-api/](https://thegraph.com/docs/en/querying/graphql-api/)
 
-A higher level API with a Swagger documentation is available at:
+A higher level API is also available, the Swagger documentation can be found at:
 
 * [https://api-py.llama.airforce/curve/v1/docs](https://api-py.llama.airforce/convex/v1/docs)
 * [https://api-py.llama.airforce/convex/v1/docs](https://api-py.llama.airforce/convex/v1/docs)
