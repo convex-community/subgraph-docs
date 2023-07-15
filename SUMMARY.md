@@ -14,6 +14,13 @@
 * [Entities](curve-dao-subgraph/entities.md)
 * [Sample Queries](curve-dao-subgraph/sample-queries.md)
 
+## Curve Stablecoin Subgraph
+
+* [Overview](curve-stablecoin-subgraph/overview.md)
+* [Entities](curve-stablecoin-subgraph/entities.md)
+* [Entities odl](curve-stablecoin-subgraph/entities-odl.md)
+* [Sample Queries](curve-stablecoin-subgraph/sample-queries.md)
+
 ## Convex Subgraph
 
 * [Overview](convex-subgraph/overview.md)
