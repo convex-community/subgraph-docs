@@ -1,60 +1,57 @@
 # Sample Queries
 
-## Retrieve all gauges and their latest weight
+## Retrieve daily trading volume data for all markets
 
 ```
-{  
-  gauges(first: 1000) {
-  address
-    name
-    type {
-      id
-    }
-    weight: weights(first: 1 orderBy:timestamp orderDirection:desc) {
-      weight
+{
+  markets(first: 1000) {
+    id
+    collateralName
+    amm {
+      volumeSnapshots(first: 1000 orderBy: timestamp orderDirection: desc where: {period:86400}) {
+        swapVolumeUSD
+        timestamp
+      }
     }
   }
 }
 ```
 
-## Get all of a user's proposals
+## Retrieve all the band snapshots for each market
+
+Note that as total band number can go up to 1024, pagination may be needed in some cases to retrieve all bands. (Here only non-empty bands are retrieved)
 
 ```
 {
-  proposals(first: 1000 where: {creator: "0xbe286d574b1ea46f54955bd856821f84dfd20b2e"} orderBy: startDate) {
-  voteId
-  voteType
-  creator
-  startDate
-  snapshotBlock
-  ipfsMetadata
-  metadata
-  votesFor
-  votesAgainst
-  voteCount
-  supportRequired
-  minAcceptQuorum
-  executed
+  markets(first: 10) {
+    id
+    collateralName
+    snapshots(where: {bandSnapshot:true} orderBy: timestamp orderDirection: desc) {
+      timestamp
+      bands(first: 1000 orderBy: index orderDirection: asc where: {collateralUsd_gt: 0 stableCoin_gt: 0}){
+        index
+        collateralUsd
+        stableCoin
+      } 
+    }
   }
 }
 ```
 
-## Retrieve the emissions received by a pool in CRV and USD over the past few weeks
+## Retrieve all time total (cumulative) swap volume for each market
 
 ```
 {
-  emissions (where: {pool: "0x3a283d9c08e8b55966afb64c515f5143cf907611"} 
-              orderBy: timestamp 
-              orderDirection: desc) {
-    gauge {
-      address
+  markets(first: 1000) {
+    id
+    collateralName
+    amm {
+      totalSwapVolume
+      volumeSnapshots(first: 1000 orderBy: timestamp orderDirection: desc where: {period:86400}) {
+        swapVolumeUSD
+        timestamp
+      }
     }
-    pool {
-      id
-    }
-    crvAmount
-    value
-    timestamp
   }
 }
 ```
